@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	private static Twitter twitter;
 	Button btnLoginTwitter;
 	ImageView handleImageView, retweeterPI[] = new ImageView[8];
+	EditText searchText;
 	ProgressBar pBar;
 	TextView alertText;
 
@@ -54,7 +56,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	private ConnectionDetector cd;
 
 	// Async task obj
-	PostTask p;
+	AsyncTwitterTasks p;
 
 	// Alert Dialog Manager
 	AlertDialogManager alert = new AlertDialogManager();
@@ -85,6 +87,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 		btnLoginTwitter = (Button) findViewById(R.id.btnLoginTwitter);
 		pBar = (ProgressBar) findViewById(R.id.progressBar);
 		alertText = (TextView) findViewById(R.id.alertText);
+		searchText = (EditText) findViewById(R.id.searchText);
 
 		btnLoginTwitter.setOnClickListener(this);
 		for (i = 0; i < 8; i++)
@@ -106,7 +109,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 		return true;
 	}
 
-	private class PostTask extends AsyncTask<String, Integer, String> {
+	private class AsyncTwitterTasks extends AsyncTask<String, Integer, String> {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
@@ -114,9 +117,10 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		@Override
 		protected String doInBackground(String... params) {
+			String userName = params[0];
 			try {
 				Random rand = new Random();
-				final User user = twitter.showUser("github");
+				final User user = twitter.showUser(userName.toString());
 				setimage(handleImageView, user.getProfileImageURL());
 				publishProgress(6);
 				status = user.getStatus().getText();
@@ -126,6 +130,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 				User retweetUser;
 				int count = 0;
 				int progress = 12;
+				treeMap.clear();
 				for (long idIterator : iDs.getIDs()) {
 					if (count > 7 || count > iDs.getIDs().length)
 						break;
@@ -159,6 +164,15 @@ public class HomeActivity extends Activity implements OnClickListener {
 			} catch (IllegalStateException e) {
 				e.printStackTrace();
 			} catch (TwitterException e) {
+				if (e.getErrorCode() == 34)
+					runOnUiThread(new Runnable() {
+						public void run() {
+							Toast.makeText(
+									getApplicationContext(),
+									"Sorry, I couldn't find that twitter account.",
+									Toast.LENGTH_LONG).show();
+						}
+					});
 				e.printStackTrace();
 			}
 			return "All Done!";
@@ -206,6 +220,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void dismissProgressBar() {
 		pBar.setVisibility(View.GONE);
 		alertText.setText(status);
+		btnLoginTwitter.setEnabled(true);
+		searchText.setEnabled(true);
 
 	}
 
@@ -247,11 +263,27 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.btnLoginTwitter:
 			alertText.setText("Loading...    0%");
+			alertText.setVisibility(View.VISIBLE);
 			pBar.setVisibility(View.VISIBLE);
-			new PostTask().execute("skadoosh!");
+			btnLoginTwitter.setEnabled(false);
+			searchText.setEnabled(false);
+			pBar.setProgress(0);
+
+			// reset images
+			handleImageView.setImageResource(R.drawable.twit_image);
+			for (i = 0; i < 8; i++)
+				retweeterPI[i].setImageResource(R.drawable.twit_image);
+			new AsyncTwitterTasks().execute(searchText.getText().toString());
 			break;
 		}
 
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		p.cancel(true);
+		super.onDestroy();
 	}
 
 }

@@ -14,13 +14,6 @@
         android:layout_height="500dp"
         android:layout_centerInParent="true" >
 
-        <Button
-            android:id="@+id/btnLoginTwitter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Leeeroy Jennnkins!" />
-
         <FrameLayout
             android:id="@+id/frameLayout1"
             android:layout_width="wrap_content"
@@ -90,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/frameLayout3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="21dp" >
+            android:layout_marginTop="25dp" >
 
             <ImageView
                 android:id="@+id/retweeterImage04"
@@ -107,11 +100,12 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/frameLayout6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/frameLayout2"
             android:layout_alignLeft="@+id/frameLayout4"
-            android:layout_marginBottom="21dp" >
+            android:layout_marginBottom="25dp" >
 
             <ImageView
                 android:id="@+id/retweeterImage00"
@@ -152,8 +146,8 @@
             android:id="@+id/FrameLayout02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/FrameLayout01"
-            android:layout_alignTop="@+id/frameLayout3" >
+            android:layout_below="@+id/frameLayout1"
+            android:layout_toLeftOf="@+id/frameLayout1" >
 
             <ImageView
                 android:id="@+id/retweeterImage05"
@@ -175,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/FrameLayout01"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp" >
+            android:layout_marginRight="25dp" >
 
             <ImageView
                 android:id="@+id/retweeterImage06"
@@ -197,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/frameLayout2"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp" >
+            android:layout_marginLeft="25dp" >
 
             <ImageView
                 android:id="@+id/retweeterImage02"
@@ -220,7 +214,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="23dp" />
+            android:layout_marginBottom="23dp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/alertText"
@@ -229,8 +224,40 @@
             android:layout_alignLeft="@+id/FrameLayout03"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="40dp"
-            android:text="Press the button to get started" />
+            android:text="Press the button to get started"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:visibility="gone" />
 
+        <Button
+            android:id="@+id/btnLoginTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/frameLayout6"
+            android:layout_alignLeft="@+id/frameLayout5"
+            android:layout_marginBottom="21dp"
+            android:text="Go" />
+
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btnLoginTwitter"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignRight="@+id/frameLayout1"
+            android:layout_toLeftOf="@+id/btnLoginTwitter"
+            android:text="github" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnLoginTwitter"
+            android:layout_alignLeft="@+id/FrameLayout03"
+            android:text="Insert Twitter handle"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </RelativeLayout>
 
 </RelativeLayout>

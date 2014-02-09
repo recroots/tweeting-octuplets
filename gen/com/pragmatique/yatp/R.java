@@ -27,27 +27,30 @@ public final class R {
         public static final int twit_image=0x7f020003;
     }
     public static final class id {
-        public static final int FrameLayout01=0x7f08000a;
-        public static final int FrameLayout02=0x7f08000c;
-        public static final int FrameLayout03=0x7f08000e;
-        public static final int action_settings=0x7f080014;
-        public static final int alertText=0x7f080013;
-        public static final int btnLoginTwitter=0x7f080000;
-        public static final int frameLayout1=0x7f080001;
+        public static final int FrameLayout01=0x7f08000b;
+        public static final int FrameLayout02=0x7f08000d;
+        public static final int FrameLayout03=0x7f08000f;
+        public static final int action_settings=0x7f080017;
+        public static final int alertText=0x7f080014;
+        public static final int btnLoginTwitter=0x7f080002;
+        public static final int frameLayout1=0x7f080000;
         public static final int frameLayout2=0x7f080003;
         public static final int frameLayout3=0x7f080005;
         public static final int frameLayout4=0x7f080007;
-        public static final int frameLayout5=0x7f080010;
-        public static final int handleImage=0x7f080002;
-        public static final int progressBar=0x7f080012;
-        public static final int retweeterImage00=0x7f080009;
+        public static final int frameLayout5=0x7f080011;
+        public static final int frameLayout6=0x7f080009;
+        public static final int handleImage=0x7f080001;
+        public static final int progressBar=0x7f080013;
+        public static final int retweeterImage00=0x7f08000a;
         public static final int retweeterImage01=0x7f080004;
-        public static final int retweeterImage02=0x7f080011;
+        public static final int retweeterImage02=0x7f080012;
         public static final int retweeterImage03=0x7f080006;
         public static final int retweeterImage04=0x7f080008;
-        public static final int retweeterImage05=0x7f08000d;
-        public static final int retweeterImage06=0x7f08000f;
-        public static final int retweeterImage07=0x7f08000b;
+        public static final int retweeterImage05=0x7f08000e;
+        public static final int retweeterImage06=0x7f080010;
+        public static final int retweeterImage07=0x7f08000c;
+        public static final int searchText=0x7f080015;
+        public static final int textView1=0x7f080016;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
