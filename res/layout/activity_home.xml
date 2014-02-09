@@ -1,0 +1,236 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".HomeActivity" >
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:layout_centerInParent="true" >
+
+        <Button
+            android:id="@+id/btnLoginTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Leeeroy Jennnkins!" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/handleImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/frameLayout1"
+            android:layout_toRightOf="@+id/frameLayout1" >
+
+            <ImageView
+                android:id="@+id/retweeterImage01"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frameLayout1"
+            android:layout_toRightOf="@+id/frameLayout1" >
+
+            <ImageView
+                android:id="@+id/retweeterImage03"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/frameLayout3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp" >
+
+            <ImageView
+                android:id="@+id/retweeterImage04"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/frameLayout2"
+            android:layout_alignLeft="@+id/frameLayout4"
+            android:layout_marginBottom="21dp" >
+
+            <ImageView
+                android:id="@+id/retweeterImage00"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/frameLayout1"
+            android:layout_toLeftOf="@+id/frameLayout1" >
+
+            <ImageView
+                android:id="@+id/retweeterImage07"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/FrameLayout01"
+            android:layout_alignTop="@+id/frameLayout3" >
+
+            <ImageView
+                android:id="@+id/retweeterImage05"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/FrameLayout01"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp" >
+
+            <ImageView
+                android:id="@+id/retweeterImage06"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/frameLayout2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp" >
+
+            <ImageView
+                android:id="@+id/retweeterImage02"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/btnLoginTwitter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/twit_image" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/cirlce_trans" />
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="23dp" />
+
+        <TextView
+            android:id="@+id/alertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/FrameLayout03"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:text="Press the button to get started" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
